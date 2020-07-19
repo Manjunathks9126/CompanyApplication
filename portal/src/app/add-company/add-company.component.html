@@ -1,0 +1,48 @@
+<p>add-company works!</p>
+
+<p-messages [(value)]="msgs"></p-messages>
+<form #compForm="ngForm" (ngSubmit)="AddBooks(compForm)">
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2 myInput">
+      <label for="email">Company Name</label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Company Name"  [(ngModel)]="compName" name="name">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2 myInput">
+      <label for="email">Founded Year</label>
+    </div>
+    <div class="col-md-4">
+        <p-calendar dateFormat="dd-mm-yy" [(ngModel)]="foundedYear" name="year" [readonlyInput]="true"></p-calendar>
+   </div>
+</div>
+<br>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2 myInput">
+      <label for="email">{{'formFileds.compCEO' | translate}}</label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="compCEO" [(ngModel)]="compCEO" name="ceo">
+    </div>
+</div>
+   <br>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+       
+    </div>
+    <div class="col-md-4 myButton">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+  </form>
+
+

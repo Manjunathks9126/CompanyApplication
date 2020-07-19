@@ -1,0 +1,8 @@
+{
+"formFileds":{
+        "compId":"Company Id",
+        "compName":"Company Name",
+        "foundedYear":"Founded Year",
+        "compCEO":"Company CEO"
+    }
+}

@@ -1,0 +1,51 @@
+<br>
+
+<div *ngIf="!companies">
+    
+        <h4 colspan="4" style="text-align: center;">{{message}}</h4>  
+    
+    </div>
+
+     <div  *ngIf="companies && companies.length==0">
+        <h4 colspan="4">{{message}}</h4>  
+     </div>
+<!--<p-table [value]="companies">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>CompId</th>
+            <th>CompName</th>
+            <th>FoundedYear</th>  
+            <th>CompCEO</th>              
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-company>
+        <tr>
+            <td>{{company.compId}}</td>
+            <td>{{company.compName}}</td>
+            <td>{{company.foundedYear}}</td>     
+            <td>{{company.compCEO}}</td>     
+        </tr>
+    </ng-template>
+  </p-table>-->
+
+  <p-table [value]="companies" [lazy]="true" 
+   (onLazyLoad)="loadCompaniesLazy($event)" [paginator]="true" 
+[rows]="4" [totalRecords]="totalRecords" [loading]="loading" [showCurrentPageReport]="true">
+<ng-template pTemplate="header">
+    <tr>
+        <th>CompId</th>
+        <th>CompName</th>
+        <th>FoundedYear</th>  
+        <th>CompCEO</th>              
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-company>
+    <tr>
+        <td>{{company.compId}}</td>
+        <td>{{company.compName}}</td>
+        <td>{{company.foundedYear}}</td>     
+        <td>{{company.compCEO}}</td>     
+    </tr>
+</ng-template>
+</p-table>
+  
