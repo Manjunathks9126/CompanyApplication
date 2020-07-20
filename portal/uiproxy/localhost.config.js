@@ -6,7 +6,7 @@ const PROXY_CONFIG = [{
     "/*/*/*",
     "/*/*/*/*"
   ],
-  target: "http://localhost:8083/Company/api/v1/",
+  target: "http://localhost:8083/Company/",
   secure: false,
   "logLevel": "debug"
  }]

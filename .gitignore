@@ -1,5 +1,6 @@
 HELP.md
 target/*
+webbuild/*
 portal/dist
 portal/e2e
 portal/node_modules

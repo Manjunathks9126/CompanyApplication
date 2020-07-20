@@ -148,7 +148,7 @@
 							</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.basedir}/portal/dist</directory>
+									<directory>${project.basedir}/portal/dist/Angular10/</directory>
 								</resource>
 							</resources>
 						</configuration>
