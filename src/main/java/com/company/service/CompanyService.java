@@ -44,4 +44,8 @@ public class CompanyService {
 	public long findTotalCompanies() {
 		return repo.count();
 	}
+	
+	public List<Company> findByCompanyName(String name) {
+		return repo.findByCompanyName(name);
+	}
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.company.entity.Company;
+import com.company.exception.NoParamValue;
 import com.company.service.CompanyService;
 
 import lombok.AllArgsConstructor;
@@ -35,6 +37,13 @@ public class CompanyController {
 		log.debug("inside findAll Companies");
 		log.debug("reqParams:"+reqParams);
 		List<Company> companies=new ArrayList<Company>();
+		if(reqParams!=null&&reqParams.size()>0) {
+			String name=reqParams.get("name");
+			if(null!=name&&name.length()>0)
+				companies=service.findByCompanyName(name);
+			else
+				throw new NoParamValue("Please provide value for name param");
+		}else
 		companies=service.findAllCompanies();
 		return ResponseEntity.ok(companies);
 	}
@@ -65,4 +74,8 @@ public class CompanyController {
 		return ResponseEntity.ok(response);
 	}
 
+//	@GetMapping("/company")
+//	public ResponseEntity<?> findCompanyByName(@RequestParam("name") String name){
+//		return ResponseEntity.ok(service.findByCompanyName(name));
+//	}
 }

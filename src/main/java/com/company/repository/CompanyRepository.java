@@ -12,4 +12,8 @@ public interface CompanyRepository  extends PagingAndSortingRepository<Company, 
 
 	@Query(value="select * from Company limit ?1,?2",nativeQuery=true)
 	public List<Company> findByPageLimit(int limit,int rows);
+	
+	@Query(value="from Company c where c.compName=?1")
+	public List<Company> findByCompanyName(String name);
+	
 }
